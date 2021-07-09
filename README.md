@@ -1,2 +1,2 @@
 # MarketPlace
-A online store where individauls can sell and/or buy various stuff.
+A online store where individuals can sell and/or buy various stuff.
