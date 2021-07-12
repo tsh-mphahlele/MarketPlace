@@ -4,16 +4,41 @@
     <head>
         <meta charset="utf-8">
         <title>
-            E-commerce Market Place
+            {% block title %}{% endblock %} E-commerce Market Place
         </title>
 
         <link  rel="stylesheet" href="https://github.com/jgthms/bulma/blob/master/css/bulma.css"/>
     </head>
 
     <body>
+
+        <nav class="navbar ">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-item"><strong>Market Place</strong></a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu" id="main-navbar">
+                <div class="navbar-end">
+
+                </div>
+            </div>
+        </nav>
+
         <section class="section">
             <div class="container">
+                {% block content %}
+                {% endblock %}
             </div>
         </section>
+
+        <footer class="footer">
+            <h3 class="is-size-4 nb-4">Market Place</h3>
+            <a href="#">Sell</a>
+        </footer>
     </body>
 </html>
