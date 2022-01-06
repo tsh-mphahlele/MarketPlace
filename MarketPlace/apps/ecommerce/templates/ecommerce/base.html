@@ -11,26 +11,32 @@
     </head>
 
     <body>
-
+        
         <nav class="navbar is-black">
             <div class="navbar-brand">
-                <a href="/" class="navbar-item"><strong>Market Place</strong></a>
+                <a href="/home" class="navbar-item"><strong>Market Place</strong></a>
                 <a href="/categories" class="navbar-item">Categories</a>
-                <a href="/Recommended" class="navbar-item">Recommended</a>
+                <a href="/recommended" class="navbar-item">Recommended</a>
                 <a href="/about" class="navbar-item">About</a>
+                
+                {% block navbar %}{% endblock %}
 
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
+                <a role="button" class="navbar-burger" class="is-active" aria-label="menu" aria-expanded="false" data-target="main-navbar">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
             </div>
             <div class="navbar-menu" id="main-navbar">
+                <div class="navbar-item">example</div>
                 <div class="navbar-end">
-
+        
                 </div>
             </div>
+            
         </nav>
+        
+        
 
         <section class="section">
             <div class="container">
