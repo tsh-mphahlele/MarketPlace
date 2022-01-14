@@ -24,7 +24,7 @@ class Category(MPTTModel):
     return self.name
 
   def save(self, *args, **kwargs):
-    value = self.title
+    value = self.name
     if not self.slug:
       self.slug = slugify(value, allow_unicode=True)
     super().save(*args, **kwargs)

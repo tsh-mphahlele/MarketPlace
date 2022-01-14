@@ -14,7 +14,7 @@
         
         <nav class="navbar is-black">
             <div class="navbar-brand">
-                <a href="/home" class="navbar-item"><strong>Market Place</strong></a>
+                <a href="/home" class="navbar-item">Market Place</a>
                 <a href="/categories" class="navbar-item">Categories</a>
                 <a href="/recommended" class="navbar-item">Recommended</a>
                 <a href="/about" class="navbar-item">About</a>
@@ -29,9 +29,10 @@
             </div>
             <div class="navbar-menu" id="main-navbar">
                 <div class="navbar-start">
-                    <div class="navbar-item">example</div></div>
+                    <div class="navbar-item">{% block navstart %}{% endblock %}</div>
+                </div>
                 <div class="navbar-end">
-                    <div class="navbar-item"><input type="text" placeholder="..."></div>
+                    <div class="navbar-item">{% block navend %}{% endblock %}</div>
                 </div>
             </div>
             
@@ -47,7 +48,7 @@
         </section>
 
         <footer class="footer">
-            <!--h3 class="is-size-4 nb-4">Market Place</h3-->
+            <!--h3 class="is-size-4 nb-4">Market Place</h3-->{% block footer %}{% endblock %}
             <a href="#">Sell</a>
         </footer>
     </body>

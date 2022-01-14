@@ -1,0 +1,5 @@
+{% extends 'ecommerce/base.html' %}
+{% include "blog/_breadcrumbs.html" with ancestors=object.category.get_ancestors object=object%}
+{% block content %}
+<p>Here appears recommeded stuff</p>
+{% endblock %}
