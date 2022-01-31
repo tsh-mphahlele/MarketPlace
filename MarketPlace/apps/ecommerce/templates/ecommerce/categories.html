@@ -1,5 +1,5 @@
 {% extends 'ecommerce/base.html' %}
-{% include "blog/_breadcrumbs.html" with ancestors=object.category.get_ancestors object=object%}
+<!--{% include "ecommerce/_breadcrumbs.html" with ancestors=object.category.get_ancestors object=object%}-->
 
 {% load mptt_tags %}
 
@@ -12,7 +12,7 @@
 <div>
     <div>
 	<ul>
-	
+		{% recursetree object_list %}
 	    <li>
 		<a href="{{node.get_absolute_url}}">{{node.name}}</a>
 		{% if not node.is_leaf_node %}
@@ -21,10 +21,16 @@
                 </ul>
 		{% endif %}
 	    </li>
-	
+		{% endrecursetree %}
 	</ul>
     </div>
+	<ul>
+		{% for item in items %}
+		<li>{{item}}: <a href="{{item.get_absolute_url}}">{{item.get_absolute_url}}</a></li>
+		{% endfor %}
+		</ul>
 </div>
 
+{% include "ecommerce/_breadcrumbs.html"%}
 
 {% endblock %}

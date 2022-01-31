@@ -1,5 +1,4 @@
 {% extends "ecommerce/base.html" %} 
-{% include "ecommerce/_breadcrumbs.html" with ancestors=object.category.get_ancestors object=object%}
 {% block title %}{{category.name}} list of items{% endblock %}
 
 {% block content %}

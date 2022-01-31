@@ -30,7 +30,7 @@ class Category(MPTTModel):
     super().save(*args, **kwargs)
 
   def get_absolute_url(self):
-    return reverse('items-by-category', args=[str(self.slug)])
+    return reverse('items', args=[str(self.slug)])
 
 class Item(models.Model):
     title = models.CharField(max_length=256)
@@ -46,7 +46,7 @@ class Item(models.Model):
       kwargs = {
         'slug': self.slug
       }
-      return reverse('item-detail', kwargs=kwargs)
+      return reverse('itemdetail', kwargs=kwargs)
 
     def save(self, *args, **kwargs):
       if not self.slug:

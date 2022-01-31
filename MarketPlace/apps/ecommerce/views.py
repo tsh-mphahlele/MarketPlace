@@ -9,6 +9,11 @@ class CategoryListView(generic.ListView):
     model = Category
     template_name = "ecommerce/categories.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['items'] = Item.objects.all()
+        return context
+
 class ItemsByCategoryView(generic.ListView):
     ordering = 'id'
     paginate_by = 10
@@ -19,7 +24,7 @@ class ItemsByCategoryView(generic.ListView):
         # the following category will also be added to the context data
         self.category = Category.objects.get(slug=self.kwargs['slug'])
         queryset = Item.objects.filter(category=self.category)
-         # need to set ordering to get consistent pagination results
+        # need to set ordering to get consistent pagination results
         queryset = queryset.order_by(self.ordering)
         return queryset
 
@@ -28,11 +33,13 @@ class ItemsByCategoryView(generic.ListView):
         context['category'] = self.category
         return context
 
+class ItemDetailView(generic.DetailView):
+    model = Item
+    template_name = 'ecommerce/itemdetail.html'
+
 def landingPage(request):
     return render(request, 'ecommerce/landingPage.html')
 
-def categories(request):
-    return render(request, 'ecommerce/categories.html')
 
 def recommended(request):
     return render(request, 'ecommerce/recommended.html')
